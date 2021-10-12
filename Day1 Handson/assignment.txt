@@ -1,0 +1,172 @@
+using System;
+public class Assignment {
+ public static void Main(string[] args) {
+      Console.WriteLine("Assignment 1");
+    Console.WriteLine("Enter your name");
+    string name=Console.ReadLine();
+    Console.WriteLine("Enter your age");
+    int age=Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Enter your country");
+    string country=Console.ReadLine();
+    // Assignment ass1=new Assignment();
+    // Console.WriteLine("Welcome {0}. Your age is {1} and you are from {2}",ass1.name,ass1.age,ass1.country);
+    Console.WriteLine("Welcome {0}. Your age is {1} and you are from {2}",name,age,country);
+}}
+
+------------------Assignment 2-----------------
+using System;
+public class Assignment {
+    public static double square(double n){
+        return n*n;
+        // Console.WriteLine("Square of {0} is {1}",n,sq);
+    }
+    public static double cube(double n){
+        return n*n*n;
+        // Console.WriteLine("Cube of {0} is {1}",n,cube);
+    }
+ public static void Main(string[] args) {
+    Console.WriteLine("Find Square and Cube of a number");
+    Console.WriteLine("Enter a number");
+    double n=Convert.ToDouble(Console.ReadLine());
+    double sq=Assignment.square(n);
+    double cube=Assignment.cube(n);
+    Console.WriteLine($"Square of {n} is {sq}");
+    Console.WriteLine($"Cube of {n} is {cube}");
+    
+}}
+
+-----------------------Assignment 3--------
+using System;
+public class Assignment {
+    int x;
+    int y;
+    public static bool compare(int x, int y){
+        if(x>y){
+            return false;
+        }else
+        {return true;
+        }
+    }
+ public static void Main(string[] args) {
+    Console.WriteLine("Comparing two numbers");
+    Console.WriteLine("Enter the value x");
+    int x=Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Enter the value y");
+    int y=Convert.ToInt32(Console.ReadLine());
+    bool result=Assignment.compare(x,y);
+    Console.WriteLine($"The result of whether {x} is less than {y} is {result}");}}
+
+---------------------------Assignment 4--------------
+using System;
+public class Assignment {
+    
+    public static int mul(int x, int y){
+        return x*y;
+    }
+ public static void Main(string[] args) {
+     int pizza=200;
+    int puff=40;
+    int pepsi=120;
+    Console.WriteLine("Calculating Bill");
+    Console.WriteLine("Enter the number of pizzas bought:");
+    int x=Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Enter the number of puffs bought:");
+    int y=Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Enter the number of pepsis bought:");
+    int z=Convert.ToInt32(Console.ReadLine());
+    int costpizza=Assignment.mul(pizza,x);
+    int costpuff=Assignment.mul(puff,y);
+    int costpepsi=Assignment.mul(pepsi,z);
+    Console.WriteLine($"The cost of pizzas: {costpizza}");
+     Console.WriteLine($"The cost of pizzas: {costpuff}");
+     Console.WriteLine($"The cost of pepsis: {costpepsi}");
+    int sum=costpizza+costpuff+costpepsi;
+    float GST=(12*sum/100);
+    float CESS=(5*sum/100);
+    Console.WriteLine("The cost of pizzas:"+costpizza);
+     Console.WriteLine("The cost of pizzas:"+costpuff);
+     Console.WriteLine("The cost of pepsis:"+costpepsi);
+         Console.WriteLine("Total Price:"+sum);
+         Console.WriteLine("GST:"+GST);
+         Console.WriteLine("CESS"+CESS);
+         float totalprice=sum+GST+CESS;
+         Console.WriteLine("Total price:"+totalprice);
+ }}
+------------------------------------Assignment 5---------------------------
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine("Enter a number");
+    sbyte number=Convert.ToSByte(Console.ReadLine());
+    Console.WriteLine("Largest value stored in a signed byte:"+number);
+	}
+}
+_________________________________________Handson_________________________
+using System;
+					
+public class Program
+{int a=20;
+ public static int manipulate(int n){//call by value
+	 return n=n*n;
+ }
+	 public static int manipulate(ref int n){
+ return n=n*n;
+ }//call by reference
+ public static int manipulate1(out int n){//unassigned out parameter not allowed
+	 int a=40;
+	 n=a;
+	 return n=n*n;
+ }
+	public static void Main()
+	{
+		Console.WriteLine("Call by value,call by reference, call by out parameter");
+		Console.WriteLine("Enter a number");
+int n=Convert.ToInt32(Console.ReadLine());
+		Console.WriteLine("Number before calling the function is:"+n);
+		Program.manipulate(n);
+// 		Program.manipulate(ref n);
+// 		Program.manipulate1(out n);
+		Console.WriteLine("See the number after calling the function:"+n);
+	}
+}
+
+___________________________________________Handson________________________________
+using System;
+					
+public class Program
+{public int cube(int n){
+	return n*n*n;
+	}
+ public int add(int x,int y){
+	return x+y;
+	}public int add(int x,int y,int z){
+	return x+y+z;
+	}
+ public string add(string a,string b){
+	return a+b;
+	}
+ public float add(float x,float y){
+	return x+y;
+	}
+	public static void Main()
+	{
+		Console.WriteLine("Method Overloading");
+		Console.WriteLine("Enter three numbers");
+		Program p=new Program();
+		int x,y,z;
+		x=Convert.ToInt32(Console.ReadLine());
+		y=Convert.ToInt32(Console.ReadLine());
+		z=Convert.ToInt32(Console.ReadLine());
+		Console.WriteLine("Adding two numbers:"+p.add(x,y));
+		Console.WriteLine("Adding three numbers:"+p.add(x,y,z));
+		Console.WriteLine("Enter two strings");
+		string a,b;
+		string c;
+		a=Console.ReadLine();
+		b=Console.ReadLine();
+		Console.WriteLine("Adding two strings:"+p.add(a,b));
+	}
+}
